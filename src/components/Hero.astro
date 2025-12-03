@@ -1,12 +1,30 @@
 ---
 import { Image } from 'astro:assets';
-import featuredImage from "../assets/images/cubes-building.webp"
+import type { ImageMetadata } from "astro";
+import { cva, type VariantProps } from 'class-variance-authority'
+
+const link = cva("p-4", {
+  variants: {
+    intent: {
+      home: "h-screen",
+      page: "h-1/2"
+    }
+  }
+})
+
+type Props = {
+  title: string
+  featuredImage: ImageMetadata
+  intent?: VariantProps<typeof link>['intent']
+}
+
+const {title, featuredImage, intent = "home"} = Astro.props
 ---
-<section class="p-4 h-screen">
+<section class={link({intent})}  transition:animate="fade" >
   <div class="bg-gray-700  rounded-sm w-full h-full flex flex-col justify-end p-8 relative overflow-hidden">
     <div class=" w-full h-full absolute left-0 top-0 bg-linear-to-b from-black via-background to-black  animate-gradient-flow flex justify-center items-center">
-          <Image src={featuredImage} alt="Featured Image" class="w-full h-full absolute t-0 l-0 object-cover z-0 text-center text-accent"  />
+      <Image src={featuredImage} alt={title || "Featured Image"} class="w-full h-full absolute t-0 l-0 object-cover z-0 text-center text-accent"  />
     </div>
-    <h1 class="text-yellow font-extrabold uppercase text-5xl md:text-6xl text-center w-full relative z-10 [&_b]:text-accent">3D Render <b>&</b> Motion</h1>
+    <h1 transition:animate="initial" class="text-yellow font-extrabold uppercase text-5xl md:text-6xl text-center w-full relative z-10 [&_b]:text-accent">{title}</h1>
   </div>
 </section>
