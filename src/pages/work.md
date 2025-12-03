@@ -1,7 +1,7 @@
 ---
 layout: "../layouts/Main.astro"
 title: Work
-heroImage: "hero-work.webp"
+heroImage: "../assets/images/hero-work.webp"
 heroIntent: "page"
 slug: work
 ---

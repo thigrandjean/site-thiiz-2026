@@ -1,7 +1,7 @@
 ---
 layout: "../layouts/Main.astro"
 title: Dreams
-heroImage: "hero-dreams.webp"
+heroImage: "../assets/images/hero-dreams.webp"
 heroIntent: "page"
 slug: dreams
 ---

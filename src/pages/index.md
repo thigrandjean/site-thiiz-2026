@@ -1,7 +1,7 @@
 ---
 layout: "../layouts/Main.astro"
 title: "3D render & motion"
-heroImage: "cubes-building.webp"
+heroImage: "../assets/images/cubes-building.webp"
 ---
 
 Hi, my name is **Thiago Grandjean**, I'm a graphic designer based in São Paulo, Brazil. The last 20 years I've been working with editorial design, webdesign and front-end development, video editing, timelapse photography, motion graphics and 3D rendering.
