@@ -14,16 +14,16 @@ const link = cva("p-4", {
 
 type Props = {
   title: string
-  heroImage: ImageMetadata
+  image: ImageMetadata
   intent?: VariantProps<typeof link>['intent']
 }
 
-const {title, heroImage, intent = "home"} = Astro.props
+const {title, image, intent = "home"} = Astro.props
 ---
 <section class={link({intent})}  transition:animate="fade" >
   <div class="bg-gray-700  rounded-sm w-full h-full flex flex-col justify-end p-8 relative overflow-hidden">
     <div class=" w-full h-full absolute left-0 top-0 bg-linear-to-b from-black via-background to-black  animate-gradient-flow flex justify-center items-center">
-      <Image src={heroImage} alt={title || "Featured Image"} class="w-full h-full absolute t-0 l-0 object-cover z-0 text-center text-accent"  />
+      <Image src={image} alt={title || "Featured Image"} class="w-full h-full absolute t-0 l-0 object-cover z-0 text-center text-accent"  />
     </div>
     <h1 transition:animate="initial" class="text-yellow font-extrabold uppercase text-5xl md:text-6xl text-center w-full relative z-10 [&_b]:text-accent">{title}</h1>
   </div>
