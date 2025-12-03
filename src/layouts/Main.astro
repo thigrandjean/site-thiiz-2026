@@ -4,13 +4,21 @@ import { getCollection } from 'astro:content';
 import Header from "../components/Header.astro"
 import Hero from "../components/Hero.astro"
 import { ClientRouter } from "astro:transitions"
+import type { ImageMetadata } from "astro";
 
 const posts = await getCollection('posts')
 
 const { frontmatter } = Astro.props
 const { title, heroImage, heroIntent} = frontmatter;
 
-console.log(`FROM MAIN ASTRO: ${heroImage}`)
+const allImages = import.meta.glob('../assets/images/*.{jpeg,jpg,png,gif,webp}');
+
+ // Find the specific image based on the frontmatter path
+const imagePath = heroImage;
+const resolvedImage = await allImages[imagePath]();
+if (!resolvedImage) {
+  console.error(`Image not found: ${imagePath}`);
+}
 ---
 
 <!doctype html>
@@ -25,7 +33,7 @@ console.log(`FROM MAIN ASTRO: ${heroImage}`)
 	</head>
 	<body>
     <Header />
-    <Hero title={title} heroImage={heroImage} intent={heroIntent} />
+    <Hero title={title} heroImage={resolvedImage.default} intent={heroIntent} />
     <main class="p-4 w-full flex flex-col items-center gap-4">
       <section class="max-w-4xl text-white text-lg flex flex-col items-center gap-4 [&_strong]:text-primary">
 	      <slot />
