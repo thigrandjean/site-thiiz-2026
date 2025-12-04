@@ -1,15 +1,26 @@
 ---
+import SocialLinks from "./SocialLinks.astro";
+
 const menu = [
-  {label: "Dreams", href: "/dreams"},
-  {label: "Work", href: "/work"}
-]
+  { label: "Dreams", href: "/dreams" },
+  { label: "Work", href: "/work" },
+];
 ---
-<nav>
+
+<nav class="flex items-center gap-4">
   <ul class="flex gap-4 text-white text-xl uppercase">
-    {menu.map((item) => (
-    <li>
-      <a class="hover:text-yellow active:text-red transition-colors" href={item.href}>{item.label}</a>
-    </li>
-    ) )}
+    {
+      menu.map((item) => (
+        <li>
+          <a
+            class="hover:text-yellow active:text-red transition-colors"
+            href={item.href}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
+  <SocialLinks />
 </nav>

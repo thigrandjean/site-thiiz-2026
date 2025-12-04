@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialLinksList = [
+  { name: "instagram", link: "https://instagram.com/thiiz_3d" },
+  { name: "behance", link: "https://www.behance.net/thigrand" },
+];
+---
+
+<Fragment>
+  {
+    socialLinksList.map((link) => (
+      <a
+        href={link.link}
+        class="text-white hover:text-yellow active:text-red transition"
+        target="_blank"
+        aria-label={link.name}
+      >
+        <Icon name={link.name} size={30} />
+      </a>
+    ))
+  }
+</Fragment>
