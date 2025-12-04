@@ -9,6 +9,7 @@
   --color-background: #232323;
   --color-yellow: #F8F400;
   --color-red: #FF0B37;
+  --color-pink: #F80084;
 
   --color-primary: var(--color-yellow);
   --color-accent: var(--color-red)

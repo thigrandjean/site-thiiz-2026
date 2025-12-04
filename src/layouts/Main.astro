@@ -1,21 +1,26 @@
 ---
-import "../styles/global.css"
-import { getCollection, type CollectionEntry } from 'astro:content';
-import Header from "../components/Header.astro"
-import Hero from "../components/Hero.astro"
-import { ClientRouter } from "astro:transitions"
+import "../styles/global.css";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import { ClientRouter } from "astro:transitions";
 import type { ImageMetadata } from "astro";
+import Card from "../components/Card.astro";
 
-const posts: CollectionEntry<'posts'>[] = await getCollection('posts')
+const posts: CollectionEntry<"posts">[] = await getCollection("posts");
 
-const { frontmatter } = Astro.props
-const { title, heroImage, heroIntent} = frontmatter;
+const { frontmatter } = Astro.props;
+const { title, heroImage, heroIntent } = frontmatter;
 
-const allImages = import.meta.glob('../assets/images/*.{jpeg,jpg,png,gif,webp}');
+const allImages = import.meta.glob(
+  "../assets/images/*.{jpeg,jpg,png,gif,webp}",
+);
 
- // Find the specific image based on the frontmatter path
+// Find the specific image based on the frontmatter path
 const imagePath = heroImage;
-const resolvedImage = (await allImages[imagePath]()) as { default: ImageMetadata };
+const resolvedImage = (await allImages[imagePath]()) as {
+  default: ImageMetadata;
+};
 if (!resolvedImage) {
   console.error(`Image not found: ${imagePath}`);
 }
@@ -23,37 +28,42 @@ if (!resolvedImage) {
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Thiiz - 3D render & motion</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Thiiz - 3D render & motion</title>
     <ClientRouter />
-	</head>
-	<body>
+  </head>
+  <body>
     <Header />
-    {!!resolvedImage &&  <Hero title={title} image={resolvedImage.default} intent={heroIntent} /> }
+    {
+      !!resolvedImage && (
+        <Hero title={title} image={resolvedImage.default} intent={heroIntent} />
+      )
+    }
     <main class="p-4 w-full flex flex-col items-center gap-4">
-      <section class="max-w-4xl text-white text-lg flex flex-col items-center gap-4 [&_strong]:text-primary">
-	      <slot />
+      <section
+        class="max-w-4xl text-white text-lg flex flex-col items-center gap-4 [&_strong]:text-primary"
+      >
+        <slot />
       </section>
 
-      <section class="text-primary">
-					{
-						posts.map((post) => (
-							<div>
-								<a href={`/posts/${post.id}/`}>
-									<!-- {post.data.heroImage && ( -->
-									<!-- 	<Image width={720} height={360} src={post.data.heroImage} alt="" /> -->
-									<!-- )} -->
-									<h4 class="title">{post.data.title}</h4>
-								</a>
-							</div>
-						))
-					}
+      <section
+        class="text-primary w-full max-w-4xl flex flex-col md:grid md:grid-cols-2 gap-4"
+      >
+        {
+          posts.map((post) => (
+            <Card
+              title={post.data.title}
+              category={post.data.category}
+              image={post.data.heroImage as ImageMetadata}
+              href={post.id}
+            />
+          ))
+        }
       </section>
-
     </main>
-	</body>
+  </body>
 </html>

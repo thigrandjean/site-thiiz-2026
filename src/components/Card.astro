@@ -1,0 +1,49 @@
+---
+import type { ImageMetadata } from "astro";
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import { Box, CircleChevronRight } from "@lucide/astro";
+
+interface Props {
+  title: string;
+  href: string;
+  category: "dreams" | "work" | string;
+  image: ImageMetadata;
+}
+
+const { title, href, category, image } = Astro.props;
+---
+
+<a
+  href={`/posts/${href}/`}
+  class="flex flex-col p-2 w-full gap-2 border-pink border rounded-md group hover:border-yellow active:border-red transition"
+>
+  {
+    image && (
+      <div class="flex aspect-video overflow-hidden items-center justify-center rounded-sm">
+        <Image
+          class="object-cover w-full h-full group-hover:scale-105 transition"
+          src={image}
+          alt={`Featured image: ${title}`}
+        />
+      </div>
+    )
+  }
+  <div class="px-4 flex justify-between items-center">
+    <div>
+      <h3
+        class="text-pink group-hover:text-yellow font-extrabold text-xl uppercase transition"
+      >
+        {title}
+      </h3>
+      <h2 class="flex gap-2 items-center text-white text-lg uppercase">
+        <Box size={20} />
+        {category}
+      </h2>
+    </div>
+    <CircleChevronRight
+      size={30}
+      class="text-pink group-hover:text-yellow group-hover:scale-115 transition"
+    />
+  </div>
+</a>
