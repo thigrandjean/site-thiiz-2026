@@ -43,7 +43,7 @@ if (!resolvedImage) {
         <Hero title={title} image={resolvedImage.default} intent={heroIntent} />
       )
     }
-    <main class="p-4 w-full flex flex-col items-center gap-4">
+    <main class="p-4 w-full flex flex-col items-center gap-8">
       <section
         class="max-w-4xl text-white text-lg flex flex-col items-center gap-4 [&_strong]:text-primary"
       >
@@ -51,7 +51,7 @@ if (!resolvedImage) {
       </section>
 
       <section
-        class="text-primary w-full max-w-4xl flex flex-col md:grid md:grid-cols-2 gap-4"
+        class="text-primary w-full max-w-6xl flex flex-col md:grid md:grid-cols-2 gap-4"
       >
         {
           posts.map((post) => (

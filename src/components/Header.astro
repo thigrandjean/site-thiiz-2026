@@ -1,10 +1,17 @@
 ---
-import Logo from "../components/Logo.astro"
-import Menu from "../components/Menu.astro"
+import Logo from "../components/Logo.astro";
+import Menu from "../components/Menu.astro";
 ---
-<header class="fixed z-50 w-full flex justify-between p-8" transition:animate="none" >
-  <a href="/">
-    <Logo /> 
-   </a>
+
+<header
+  class="fixed z-50 w-full flex justify-between p-8"
+  transition:animate="none"
+>
+  <a
+    href="/"
+    class="text-yellow hover:scale-105 active:scale-95 active:text-red transition"
+  >
+    <Logo />
+  </a>
   <Menu />
 </header>

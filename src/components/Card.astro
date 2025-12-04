@@ -16,7 +16,7 @@ const { title, href, category, image } = Astro.props;
 
 <a
   href={`/posts/${href}/`}
-  class="flex flex-col p-2 w-full gap-2 border-pink border rounded-md group hover:border-yellow active:border-red transition"
+  class="flex flex-col p-2 w-full gap-2 border-gray-200 border rounded-md group hover:border-yellow active:border-red transition"
 >
   {
     image && (
@@ -24,7 +24,7 @@ const { title, href, category, image } = Astro.props;
         <Image
           class="object-cover w-full h-full group-hover:scale-105 transition"
           src={image}
-          alt={`Featured image: ${title}`}
+          alt={`Featugray-200 image: ${title}`}
         />
       </div>
     )
@@ -32,7 +32,7 @@ const { title, href, category, image } = Astro.props;
   <div class="px-4 flex justify-between items-center">
     <div>
       <h3
-        class="text-pink group-hover:text-yellow font-extrabold text-xl uppercase transition"
+        class="text-gray-200 group-hover:text-yellow group-active:text-red font-extrabold text-xl uppercase transition"
       >
         {title}
       </h3>
@@ -43,7 +43,7 @@ const { title, href, category, image } = Astro.props;
     </div>
     <CircleChevronRight
       size={30}
-      class="text-pink group-hover:text-yellow group-hover:scale-115 transition"
+      class="text-gray-200 group-hover:text-yellow group-active:text-red group-hover:scale-115 transition"
     />
   </div>
 </a>
