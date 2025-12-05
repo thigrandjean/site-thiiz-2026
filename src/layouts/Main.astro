@@ -6,6 +6,7 @@ import Hero from "../components/Hero.astro";
 import { ClientRouter } from "astro:transitions";
 import type { ImageMetadata } from "astro";
 import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
 
 const { frontmatter } = Astro.props;
 const { title, heroImage, heroIntent, category } = frontmatter;
@@ -70,5 +71,6 @@ const posts: CollectionEntry<"posts">[] = await getCollection(
         }
       </section>
     </main>
+    <Footer />
   </body>
 </html>

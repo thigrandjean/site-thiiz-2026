@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+import SocialLinks from "../components/SocialLinks.astro";
+---
+
+<footer
+  class="w-full flex flex-col items-center justify-center text-yellow py-10 gap-8"
+>
+  <div class="flex gap-4">
+    <SocialLinks />
+  </div>
+  <a
+    href="/"
+    class="text-yellow hover:scale-105 active:scale-95 active:text-red transition"
+  >
+    <Icon name="thiiz" size={30} />
+  </a>
+</footer>
