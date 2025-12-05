@@ -7,10 +7,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 import icon from 'astro-icon';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), sitemap(), icon()],
+
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  adapter: cloudflare()
 });
