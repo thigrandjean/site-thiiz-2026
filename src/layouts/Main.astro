@@ -9,7 +9,7 @@ import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
 const { frontmatter } = Astro.props;
-const { title, heroImage, heroIntent, category } = frontmatter;
+const { title, description, heroImage, heroIntent, category } = frontmatter;
 
 const allImages = import.meta.glob(
   "../assets/images/*.{jpeg,jpg,png,gif,webp}"
@@ -40,7 +40,8 @@ const posts: CollectionEntry<"posts">[] = await getCollection(
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>Thiiz - 3D render & motion</title>
+    <title>Thiiz - {title}</title>
+    <meta name="description" content={description} />
     <ClientRouter />
   </head>
   <body>

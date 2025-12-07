@@ -8,6 +8,7 @@ const posts = defineCollection({
     z.object({
       title: z.string(),
       slug: z.string(),
+      description: z.string(),
       category: z.string(),
       heroImage: image().optional()
     })

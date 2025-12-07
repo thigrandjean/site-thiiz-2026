@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 
 const socialLinksList = [
   { name: "instagram", link: "https://instagram.com/thiiz_3d" },
-  { name: "behance", link: "https://www.behance.net/thigrand" },
+  { name: "behance", link: "https://www.behance.net/thigrand" }
 ];
 ---
 
@@ -14,7 +14,7 @@ const socialLinksList = [
         href={link.link}
         class="text-white hover:text-yellow active:text-red transition"
         target="_blank"
-        aria-label={link.name}
+        aria-label={`Visit the ${link.name} profile`}
       >
         <Icon name={link.name} size={30} />
       </a>

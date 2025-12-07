@@ -7,7 +7,7 @@ import { ClientRouter } from "astro:transitions";
 
 type Props = CollectionEntry<"posts">["data"];
 
-const { title, heroImage } = Astro.props;
+const { title, description, heroImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +18,8 @@ const { title, heroImage } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>Thiiz - 3D render & motion</title>
+    <title>Thiiz - {title}</title>
+    <meta name="description" content={description} />
     <ClientRouter />
   </head>
   <body>

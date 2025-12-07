@@ -24,22 +24,22 @@ const { title, href, category, image } = Astro.props;
         <Image
           class="object-cover w-full h-full group-hover:scale-105 transition"
           src={image}
-          alt={`Featugray-200 image: ${title}`}
+          alt={`Featured image: ${title}`}
         />
       </div>
     )
   }
   <div class="px-4 flex justify-between items-center">
     <div>
-      <h3
+      <h2
         class="text-gray-200 group-hover:text-yellow group-active:text-red font-extrabold text-xl uppercase transition"
       >
         {title}
-      </h3>
-      <h2 class="flex gap-2 items-center text-white text-lg uppercase">
+      </h2>
+      <h3 class="flex gap-2 items-center text-white text-lg uppercase">
         <Box size={20} />
         {category}
-      </h2>
+      </h3>
     </div>
     <CircleChevronRight
       size={30}
