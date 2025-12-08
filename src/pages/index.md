@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/Main.astro"
-title: "Thiiz - 3D render & motion"
+title: "3D render & motion"
 description:
   "Graphic designer specialized in creaating realistic 3D product scenes,
   animations, and renders for branding and visual storytelling."
