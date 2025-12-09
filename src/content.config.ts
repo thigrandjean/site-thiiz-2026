@@ -10,7 +10,8 @@ const posts = defineCollection({
       slug: z.string(),
       description: z.string(),
       category: z.string(),
-      heroImage: image().optional()
+      heroImage: image().optional(),
+      date: z.coerce.date()
     })
 });
 

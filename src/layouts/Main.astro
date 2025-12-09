@@ -24,12 +24,11 @@ if (!resolvedImage) {
   console.error(`Image not found: ${imagePath}`);
 }
 
-const posts: CollectionEntry<"posts">[] = await getCollection(
-  "posts",
-  ({ data }) => {
+const posts: CollectionEntry<"posts">[] = (
+  await getCollection("posts", ({ data }) => {
     return !category || data.category == category;
-  }
-);
+  })
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <!doctype html>
@@ -68,6 +67,7 @@ const posts: CollectionEntry<"posts">[] = await getCollection(
               category={post.data.category}
               image={post.data.heroImage as ImageMetadata}
               href={post.id}
+              date={post.data.date}
             />
           ))
         }
