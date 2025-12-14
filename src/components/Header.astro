@@ -4,7 +4,9 @@ import Menu from "../components/Menu.astro";
 ---
 
 <header
-  class="fixed z-50 w-full flex justify-between p-8"
+  transition:persist
+  id="site-header"
+  class="absolute z-50 flex justify-between p-4 bg-background/30 top-6 right-6 left-6 rounded-sm"
   transition:animate="none"
 >
   <a
@@ -16,3 +18,19 @@ import Menu from "../components/Menu.astro";
   </a>
   <Menu />
 </header>
+
+<script>
+  const header = document.getElementById("site-header");
+  const stickyOffset = header?.offsetTop;
+  const scrollThreshold = 18;
+  function handleScroll() {
+    if (stickyOffset && window.pageYOffset > scrollThreshold) {
+      header?.classList.remove("absolute", "top-6");
+      header?.classList.add("fixed", "top-2");
+    } else {
+      header?.classList.remove("fixed", "top-2");
+      header?.classList.add("absolute", "top-6");
+    }
+  }
+  window.addEventListener("scroll", handleScroll);
+</script>
