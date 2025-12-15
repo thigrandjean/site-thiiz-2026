@@ -27,12 +27,12 @@ const { title, description, heroImage } = Astro.props;
     {!!heroImage && <Hero image={heroImage} intent="page" />}
     <main class="p-4 w-full flex flex-col items-center gap-4">
       <h1
-        class="text-yellow font-extrabold uppercase text-2xl md:text-3xl text-center w-full relative z-10 [&_b]:text-accent"
+        class="max-w-4xl text-yellow font-extrabold uppercase text-2xl md:text-3xl w-full relative z-10 [&_b]:text-accent"
       >
         {title}
       </h1>
       <section
-        class="max-w-4xl text-white text-lg flex flex-col items-center gap-4 [&_strong]:text-primary"
+        class="max-w-4xl text-white text-lg flex flex-col gap-4 [&_strong]:text-primary"
       >
         <slot />
       </section>
