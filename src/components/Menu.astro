@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks.astro";
 
 const menu = [
   { label: "Dreams", href: "/dreams" },
-  { label: "Work", href: "/work" },
+  { label: "Work", href: "/work" }
 ];
 ---
 
@@ -13,7 +13,7 @@ const menu = [
       menu.map((item) => (
         <li>
           <a
-            class="hover:text-yellow active:text-red transition-colors"
+            class="text-foreground hover:text-primary active:text-accent transition-colors"
             href={item.href}
           >
             {item.label}

@@ -6,15 +6,31 @@
 
 
 @theme {
-  --color-background: #232323;
+  --color-dark-grey: #171A1C;
+  --color-light-grey: #e6e6e6;
   --color-yellow: #F8F400;
   --color-red: #FF0B37;
   --color-pink: #F80084;
+  --color-blue: #1D00F7;
 
-  --color-primary: var(--color-yellow);
-  --color-accent: var(--color-red)
+  --color-background: var(--color-light-grey);
+  --color-foreground: var(--color-dark-grey);
+  --color-primary: var(--color-red);
+  --color-accent: var(--color-blue);
+  --color-logo: var(--color-foreground);
+
 }
 
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-dark-grey);
+    --color-foreground: var(--color-light-grey);
+    --color-primary: var(--color-yellow);
+    --color-accent: var(--color-red);
+    --color-logo: var(--color-primary);
+  }
+}
 
 html,
 body {
@@ -23,7 +39,6 @@ body {
 }
 
 body {
-  background-color: var(--color-background);
   font-family: 'Barlow Condensed' , 'sans-serif';
 }
 

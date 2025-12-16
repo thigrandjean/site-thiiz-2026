@@ -43,7 +43,7 @@ const posts: CollectionEntry<"posts">[] = (
     <meta name="description" content={description} />
     <ClientRouter />
   </head>
-  <body>
+  <body class="bg-background">
     <Header />
     {
       !!resolvedImage && (
@@ -52,7 +52,7 @@ const posts: CollectionEntry<"posts">[] = (
     }
     <main class="p-4 w-full flex flex-col items-center gap-8">
       <section
-        class="max-w-4xl text-white text-lg flex flex-col items-center gap-4 [&_strong]:text-primary"
+        class="max-w-4xl text-foreground text-lg flex flex-col items-center gap-4 [&_strong]:text-primary"
       >
         <slot />
       </section>

@@ -16,7 +16,7 @@ const { title, href, category, image } = Astro.props;
 
 <a
   href={`/posts/${href}/`}
-  class="flex flex-col p-2 w-full gap-2 border-gray-200 border rounded-md group hover:border-yellow active:border-red transition"
+  class="flex flex-col p-2 w-full gap-2 border-foreground border rounded-md group hover:border-primary active:border-accent transition"
 >
   {
     image && (
@@ -32,18 +32,18 @@ const { title, href, category, image } = Astro.props;
   <div class="px-4 flex justify-between items-center">
     <div>
       <h2
-        class="text-gray-200 group-hover:text-yellow group-active:text-red font-extrabold text-xl uppercase transition"
+        class="text-foreground group-hover:text-primary group-active:text-accent font-extrabold text-xl uppercase transition"
       >
         {title}
       </h2>
-      <h3 class="flex gap-2 items-center text-white text-lg uppercase">
+      <h3 class="flex gap-2 items-center text-foreground text-lg uppercase">
         <Box size={20} />
         {category}
       </h3>
     </div>
     <CircleChevronRight
       size={30}
-      class="text-gray-200 group-hover:text-yellow group-active:text-red group-hover:scale-115 transition"
+      class="text-foreground group-hover:text-primary group-active:text-accent group-hover:scale-115 transition"
     />
   </div>
 </a>
