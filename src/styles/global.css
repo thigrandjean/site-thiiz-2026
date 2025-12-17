@@ -25,15 +25,15 @@
 
 }
 
-/* @media (prefers-color-scheme: dark) { */
-/*   :root { */
-/*     --color-background: var(--color-dark-grey); */
-/*     --color-foreground: var(--color-light-grey); */
-/*     --color-primary: var(--color-yellow); */
-/*     --color-accent: var(--color-red); */
-/*     --color-logo: var(--color-primary); */
-/*   } */
-/* } */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-dark-grey);
+    --color-foreground: var(--color-light-grey);
+    --color-primary: var(--color-yellow);
+    --color-accent: var(--color-red);
+    --color-logo: var(--color-primary);
+  }
+}
 
 html,
 body {
