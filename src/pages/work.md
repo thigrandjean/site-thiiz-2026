@@ -6,6 +6,7 @@ description:
 heroImage: "../assets/images/hero-work.webp"
 heroIntent: "page"
 category: work
+slug: work
 ---
 
 Here I share some recent projects: archviz, 3D product visualizations and

@@ -3,13 +3,13 @@ import "../styles/global.css";
 import { getCollection, type CollectionEntry } from "astro:content";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import { ClientRouter } from "astro:transitions";
 import type { ImageMetadata } from "astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
 const { frontmatter } = Astro.props;
-const { title, description, heroImage, heroIntent, category } = frontmatter;
+const { title, description, heroImage, heroIntent, category, slug } =
+  frontmatter;
 
 const allImages = import.meta.glob(
   "../assets/images/*.{jpeg,jpg,png,gif,webp}"
@@ -41,13 +41,17 @@ const posts: CollectionEntry<"posts">[] = (
     <meta name="generator" content={Astro.generator} />
     <title>Thiiz - {title}</title>
     <meta name="description" content={description} />
-    <ClientRouter />
   </head>
   <body class="bg-background">
     <Header />
     {
       !!resolvedImage && (
-        <Hero title={title} image={resolvedImage.default} intent={heroIntent} />
+        <Hero
+          title={title}
+          image={resolvedImage.default}
+          intent={heroIntent}
+          slug={slug}
+        />
       )
     }
     <main class="p-4 w-full flex flex-col items-center gap-8">
@@ -67,6 +71,7 @@ const posts: CollectionEntry<"posts">[] = (
               category={post.data.category}
               image={post.data.heroImage as ImageMetadata}
               href={post.id}
+              slug={post.data.slug}
             />
           ))
         }

@@ -3,7 +3,6 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import type { CollectionEntry } from "astro:content";
-import { ClientRouter } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 
 type Props = CollectionEntry<"posts">["data"];
@@ -21,11 +20,10 @@ const { title, description, heroImage } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>Thiiz - {title}</title>
     <meta name="description" content={description} />
-    <ClientRouter />
   </head>
   <body class="bg-background">
     <Header />
-    {!!heroImage && <Hero image={heroImage} intent="page" />}
+    {!!heroImage && <Hero image={heroImage} intent="post" />}
     <main class="p-4 w-full flex flex-col items-center gap-4">
       <h1
         class="max-w-4xl text-primary font-extrabold uppercase text-2xl md:text-3xl w-full relative z-10 [&_b]:text-accent"

@@ -6,6 +6,7 @@ description:
 heroImage: "../assets/images/hero-dreams.webp"
 heroIntent: "page"
 category: dreams
+slug: dreams
 ---
 
 A little place to share some experiments and personal works. Feel free to

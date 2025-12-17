@@ -9,14 +9,16 @@ interface Props {
   href: string;
   category: "dreams" | "work" | string;
   image: ImageMetadata;
+  slug: string;
 }
 
-const { title, href, category, image } = Astro.props;
+const { title, href, category, image, slug } = Astro.props;
 ---
 
 <a
   href={`/posts/${href}/`}
   class="flex flex-col p-2 w-full gap-2 border-foreground border rounded-md group hover:border-primary active:border-accent transition"
+  style={`view-transition-name: ${slug}`}
 >
   {
     image && (

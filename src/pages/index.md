@@ -5,6 +5,7 @@ description:
   "Graphic designer specialized in creaating realistic 3D product scenes,
   animations, and renders for branding and visual storytelling."
 heroImage: "../assets/images/cubes-building.webp"
+slug: home
 ---
 
 Hi, my name is **Thiago Grandjean**, I'm a graphic designer based in São Paulo,
