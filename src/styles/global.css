@@ -13,24 +13,27 @@
   --color-pink: #F80084;
   --color-blue: #1D00F7;
 
+  --shadow-main:
+    0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 1px 12px 1px rgba(0, 0, 0, 0.15);
+
   --color-background: var(--color-light-grey);
   --color-foreground: var(--color-dark-grey);
   --color-primary: var(--color-red);
-  --color-accent: var(--color-blue);
+  --color-accent: var(--color-dark-grey);
   --color-logo: var(--color-foreground);
 
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-dark-grey);
-    --color-foreground: var(--color-light-grey);
-    --color-primary: var(--color-yellow);
-    --color-accent: var(--color-red);
-    --color-logo: var(--color-primary);
-  }
-}
+/* @media (prefers-color-scheme: dark) { */
+/*   :root { */
+/*     --color-background: var(--color-dark-grey); */
+/*     --color-foreground: var(--color-light-grey); */
+/*     --color-primary: var(--color-yellow); */
+/*     --color-accent: var(--color-red); */
+/*     --color-logo: var(--color-primary); */
+/*   } */
+/* } */
 
 html,
 body {
