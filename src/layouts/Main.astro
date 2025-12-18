@@ -8,8 +8,7 @@ import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 
 const { frontmatter } = Astro.props;
-const { title, description, heroImage, heroIntent, category, slug } =
-  frontmatter;
+const { title, description, heroImage, heroIntent, category } = frontmatter;
 
 const allImages = import.meta.glob(
   "../assets/images/*.{jpeg,jpg,png,gif,webp}"
@@ -46,12 +45,7 @@ const posts: CollectionEntry<"posts">[] = (
     <Header />
     {
       !!resolvedImage && (
-        <Hero
-          title={title}
-          image={resolvedImage.default}
-          intent={heroIntent}
-          slug={slug}
-        />
+        <Hero title={title} image={resolvedImage.default} intent={heroIntent} />
       )
     }
     <main class="p-4 w-full flex flex-col items-center gap-8">
