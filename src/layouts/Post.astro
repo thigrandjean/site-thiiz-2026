@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import BaseHead from "./BaseHead.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import type { CollectionEntry } from "astro:content";
@@ -12,15 +13,7 @@ const { title, description, heroImage } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Thiiz - {title}</title>
-    <meta name="description" content={description} />
-  </head>
+  <BaseHead title={title} description={description} />
   <body class="bg-background">
     <Header />
     {!!heroImage && <Hero image={heroImage} intent="post" />}

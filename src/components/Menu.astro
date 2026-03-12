@@ -3,7 +3,8 @@ import SocialLinks from "./SocialLinks.astro";
 
 const menu = [
   { label: "Dreams", href: "/dreams" },
-  { label: "Work", href: "/work" }
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" }
 ];
 ---
 
@@ -22,5 +23,7 @@ const menu = [
       ))
     }
   </ul>
-  <SocialLinks />
+  <div class="hidden md:flex gap-2">
+    <SocialLinks />
+  </div>
 </nav>

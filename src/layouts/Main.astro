@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { getCollection, type CollectionEntry } from "astro:content";
+import BaseHead from "./BaseHead.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import type { ImageMetadata } from "astro";
@@ -32,15 +33,7 @@ const posts: CollectionEntry<"posts">[] = (
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Thiiz - {title}</title>
-    <meta name="description" content={description} />
-  </head>
+  <BaseHead title={title} description={description} />
   <body class="bg-background">
     <Header />
     {
