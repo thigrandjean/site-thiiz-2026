@@ -9,14 +9,16 @@ interface Props {
   href: string;
   category: "dreams" | "work" | string;
   image: ImageMetadata;
+  slug: string;
 }
 
-const { title, href, category, image } = Astro.props;
+const { title, href, category, image, slug } = Astro.props;
 ---
 
 <a
   href={`/posts/${href}/`}
-  class="flex flex-col p-2 w-full gap-2 border-gray-200 border rounded-md group hover:border-yellow active:border-red transition"
+  class="flex flex-col p-2 w-full gap-2 border-foreground border rounded-md group hover:border-primary active:border-accent transition"
+  style={`view-transition-name: ${slug}`}
 >
   {
     image && (
@@ -24,26 +26,26 @@ const { title, href, category, image } = Astro.props;
         <Image
           class="object-cover w-full h-full group-hover:scale-105 transition"
           src={image}
-          alt={`Featugray-200 image: ${title}`}
+          alt={`Featured image: ${title}`}
         />
       </div>
     )
   }
   <div class="px-4 flex justify-between items-center">
     <div>
-      <h3
-        class="text-gray-200 group-hover:text-yellow group-active:text-red font-extrabold text-xl uppercase transition"
+      <h2
+        class="text-foreground group-hover:text-primary group-active:text-accent font-extrabold text-xl uppercase transition"
       >
         {title}
-      </h3>
-      <h2 class="flex gap-2 items-center text-white text-lg uppercase">
+      </h2>
+      <h3 class="flex gap-2 items-center text-foreground text-lg uppercase">
         <Box size={20} />
         {category}
-      </h2>
+      </h3>
     </div>
     <CircleChevronRight
       size={30}
-      class="text-gray-200 group-hover:text-yellow group-active:text-red group-hover:scale-115 transition"
+      class="text-foreground group-hover:text-primary group-active:text-accent group-hover:scale-115 transition"
     />
   </div>
 </a>

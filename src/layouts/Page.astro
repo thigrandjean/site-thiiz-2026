@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import BaseHead from "./BaseHead.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+
+import heroImage from "../assets/images/hero-work.webp";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead title={title} description={description} />
+  <body class="bg-background">
+    <Header />
+    <Hero intent="page" title={title} image={heroImage} />
+    <main class="p-4 w-full flex flex-col items-center gap-8">
+      <section
+        class="max-w-4xl text-foreground text-lg flex flex-col items-center gap-4 [&_strong]:text-primary"
+      >
+        <slot />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
