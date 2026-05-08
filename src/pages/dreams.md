@@ -9,5 +9,5 @@ category: dreams
 slug: dreams
 ---
 
-A little place to share some experiments and personal works. Feel free to
-explore.
+Um lugar onde compartilho alguns experimentos e trabalhos pessoais. Fique à
+vontade para explorar meus sonhos.

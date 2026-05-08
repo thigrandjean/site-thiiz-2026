@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/Main.astro"
-title: "3D render & motion"
+title: "Design, Motion & 3D render"
 description:
   "Designer gráfico com mais de 20 anos de experiência em animação 3D, edição de
   vídeo, motion graphics e criação de conteúdo para redes sociais. Freelancer
